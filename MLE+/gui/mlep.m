@@ -749,11 +749,11 @@ if exist(pathOutput,'file')
     % Last Entry
     last = i;
     % Add Input
-    for i = 1:size(handles.DATA.inputFieldNames,2)
-        handles.DATA.simulateListboxText{i+last} = handles.DATA.inputFieldNames{i};
-        handles.DATA.varsData(:,i+last) = handles.DATA.mlepIn.(handles.DATA.inputFieldNames{i})(1:size(handles.DATA.varsData,1))';
-        handles.DATA.vars(i+last).object = handles.DATA.inputFieldNames(i);
-    end 
+%     for i = 1:size(handles.DATA.inputFieldNames,2)
+%         handles.DATA.simulateListboxText{i+last} = handles.DATA.inputFieldNames{i};
+%         handles.DATA.varsData(:,i+last) = handles.DATA.mlepIn.(handles.DATA.inputFieldNames{i})(1:size(handles.DATA.varsData,1))';
+%         handles.DATA.vars(i+last).object = handles.DATA.inputFieldNames(i);
+%     end 
 %     
 %     if isempty(i)
 %         i = 0;

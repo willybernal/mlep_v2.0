@@ -10,7 +10,8 @@ classdef mlepProcess < handle
     %   See also:
     %       <a href="https://gaia.lbl.gov/bcvtb">BCVTB (hyperlink)</a>
     %
-    % (C) 2010-2013 by Willy Bernal(willyg@seas.upenn.edu)
+    % (C)   2009-2013 by Truong Nghiem(truong@seas.upenn.edu)
+    %       2010-2013 by Willy Bernal(willybernal@gmail.com)
     
     % Last update: 2013-07-22 by Willy Bernal
     
@@ -330,8 +331,9 @@ classdef mlepProcess < handle
             noSettings = isempty(MLEPSETTINGS) || ~isstruct(MLEPSETTINGS);
             if noSettings
                 % Try to run mlepInit
-                if exist('mlepInit', 'file') == 2
-                    mlepInit;
+                if exist('installMlep', 'file') == 2
+                    %mlepInit(,'',obj.bcvtbDir);
+                    installMlep;
                     noSettings = isempty(MLEPSETTINGS) || ~isstruct(MLEPSETTINGS);
                 end
             end

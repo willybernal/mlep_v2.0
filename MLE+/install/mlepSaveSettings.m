@@ -17,7 +17,7 @@ function mlepSaveSettings(homePath, eplusPath, javaPath, bcvtbPath);
 global MLEPSETTINGS
 
 % Run MLE+ Initialization
-mlepInit(homePath, eplusPath, javaPath, bcvtbPath);
+mlepInit(eplusPath, javaPath, bcvtbPath);
 
 % PC env
 if ispc

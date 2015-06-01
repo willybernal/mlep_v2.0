@@ -35,7 +35,7 @@ if ispc
     javaPath = 'C:\Program Files (x86)\Java\jre7\bin';
 else
     % Unix
-    eplusPath = '/Applications/EnergyPlus-8-1-0';
+    eplusPath = '/Applications/EnergyPlus-8-3-0';
 end
 
 %% DO NOT MODIFY
@@ -93,6 +93,7 @@ else
         javaPath = '';
     end
     mlepSaveSettings(mlepPath, eplusPath, javaPath, bcvtbPath);
+    disp('INSTALLATION COMPLETED!');
 end
 
 % Save Paths

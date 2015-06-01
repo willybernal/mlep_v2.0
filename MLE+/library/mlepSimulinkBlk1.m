@@ -4,7 +4,8 @@ function mlepSimulinkBlk1(block)
 %   Cosimulation.  It is part of the MLE+ toolbox.  Open the MLE+ Simulink
 %   library mlepBlockset.mdl to use this block.
 %
-% (C) 2013 by Willy Bernal (willyg@seas.upenn.edu)
+% (C)   2009-2013 by Truong Nghiem(truong@seas.upenn.edu)
+%       2010-2013 by Willy Bernal(willyg@seas.upenn.edu)
 
 % Last update: 2013-12-30 by Willy Bernal
 
@@ -272,6 +273,7 @@ if processobj.isRunning
 %         processobj.stop(false);
         processobj.stop;
         block.OutputPort(1).Data = flag;
+        return;
     else
         if isempty(rvalues), rvalues = 0; end
 %         if isempty(ivalues), ivalues = 0; end

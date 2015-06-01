@@ -1,4 +1,4 @@
-function mlepInit(homePath, eplusDir, javaDir, bcvtbDir)
+function mlepInit(eplusDir, javaDir, bcvtbDir)
 % This script sets up the environment for MLE+.
 % It should be modified to the actual settings of the computer,
 % including path to BCVTB, EnergyPlus, etc.
