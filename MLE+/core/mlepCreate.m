@@ -319,19 +319,10 @@ else
     numArgs = 0;
 end
 
-% Construct command line as a Java array of strings
-jCmds = javaArray('java.lang.String', 1 + numArgs);
-jCmds(1) = java.lang.String(cmd);
-for kk = 1:numArgs
-    jCmds(kk+1) = java.lang.String(args{kk});
-end
-%% WILLY 
+%% Set Variables
 for kk = 1:numel(args)
     cmd = [cmd ' ' args{kk}];
 end
-
-% Create the ProcessBuilder
-jPB = java.lang.ProcessBuilder(jCmds);
 
 % Process and set env variables
 if nargin >= 3
@@ -342,38 +333,8 @@ if nargin >= 3
     end
 end
 
-%% WILLY 
-[status, result] = system([cmd ' &'],'-echo'); % ' &'
+%% Start Co-Simulation Program (Write to log file)
+[status, result] = system([cmd '>mlep.log &'],'-echo'); % ' &'
 pid = 0;
 status = 0;
-%%
-% % Create the ProcessBuilder
-% jPB = java.lang.ProcessBuilder(jCmds);
-% 
-% % Process and set env variables
-% if nargin >= 3
-%     assert(iscell(env), 'Environment variables must be provided as a cell array of cell arrays of strings.');
-%     
-%     jEnvMap = jPB.environment();
-%     
-%     for kk = 1:numel(env)
-%         if jEnvMap.containsKey(env{kk}{1}) && numel(env{kk}) == 3
-%             jEnvMap.put(env{kk}{1}, env{kk}{3});
-%         else
-%             jEnvMap.put(env{kk}{1}, env{kk}{2});
-%         end
-%     end
-% end
-% 
-% % Set working directory
-% if nargin >= 4
-%     assert(ischar(workdir), 'Working directory must be a string.');
-%     
-%     jPB.directory(java.io.File(workdir));
-% end 
-
-% Start the process (the object is the process ID)
-% WILLY COMMENTED LINES
-% pid = jPB.start();
-% status = 0;   % If this line is reached, it should be successful
 end

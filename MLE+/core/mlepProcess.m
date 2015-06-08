@@ -94,12 +94,6 @@ classdef mlepProcess < handle
                 obj.closeCommSockets;
                 rethrow(ErrObj);
             end
-            
-%             if status == 0 && isjava(obj.commSocket)
-%                 % Create writer and reader
-%                 obj.createStreams;
-%                 obj.isRunning = true;
-%             end
         end
         
         %%==============================================================
