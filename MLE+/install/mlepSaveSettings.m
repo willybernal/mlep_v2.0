@@ -27,5 +27,5 @@ else
 end
 
 % Save MLE+ Settings
-save([homePath filesep 'MLEPSETTINGS.mat','-v7'],'MLEPSETTINGS');
+save([homePath filesep 'MLEPSETTINGS.mat'],'-v7','MLEPSETTINGS');
 end

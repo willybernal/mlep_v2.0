@@ -334,7 +334,17 @@ if nargin >= 3
 end
 
 %% Start Co-Simulation Program (Write to log file)
-[status, result] = system([cmd '>mlep.log &'],'-echo'); % ' &'
+% Matlab Version
+if verLessThan('matlab', '7.0.1')
+    % -- Put code to run under MATLAB 7.0.0 and earlier here --
+else
+    % -- Put code to run under MATLAB 7.0.1 and later here --
+    setenv('DYLD_LIBRARY_PATH', '/usr/local/bin:/opt/local/lib:')
+end
+
+% Run Command
+[status,~] = system([cmd '> mlep.log &'],'-echo');
+
+% Process id - not used
 pid = 0;
-status = 0;
 end

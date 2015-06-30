@@ -81,10 +81,10 @@ else
                 disp(message);
                 disp(messageid);
             else
-                disp('INSTALLATION COMPLETED!');
+                disp('MLE+: INSTALLATION COMPLETED!');
             end
         else
-            disp('INSTALLATION COMPLETED!');
+            disp('MLE+: INSTALLATION COMPLETED!');
         end
     end
     
@@ -93,7 +93,7 @@ else
         javaPath = '';
     end
     mlepSaveSettings(mlepPath, eplusPath, javaPath, bcvtbPath);
-    disp('INSTALLATION COMPLETED!');
+    disp('MLEP+: INSTALLATION COMPLETED!');
 end
 
 % Save Paths
