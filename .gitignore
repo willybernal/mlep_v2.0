@@ -16,5 +16,7 @@
 *.mdd
 *.edd
 socket.cfg
-
-
+utilSocket.cfg
+fort.6
+MLEPSETTINGS.mat
+.DS_Store
